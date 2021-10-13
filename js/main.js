@@ -24,3 +24,30 @@ function goMap() {
         }
     })
 }
+
+
+let mediaMaxWidth450 = window.matchMedia('(max-width: 430px)');
+let worksItems = document.getElementById('cell').getElementsByClassName("item");
+function mediaResponse(e) {
+    if (e.matches) {
+        for (let i = 0; i < 5; i++) {
+            worksItems[i].style.display = 'none';
+        }
+    } else {
+        for (let i = 0; i < 5; i++) {
+            worksItems[i].style.display = 'flex';
+        }
+    }
+}
+mediaMaxWidth450.addListener(mediaResponse)
+
+
+if (window.matchMedia("(max-width: 430px)").matches) {
+    for (let i = 0; i < 5; i++) {
+        worksItems[i].style.display = 'none';
+    }
+} else {
+    for (let i = 0; i < 5; i++) {
+        worksItems[i].style.display = 'flex';
+    }
+}
