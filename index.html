@@ -7,12 +7,14 @@
 
     <link rel="stylesheet" href="style/main.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css" integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp" crossorigin="anonymous">
+    <link
+            rel="stylesheet"
+            href="https://unpkg.com/swiper/swiper-bundle.min.css"
+    />
 </head>
 <body>
-
-
 <div class="main_block" id="home">
-        <nav>
+        <nav id="menu">
             <div class="wrapper" id="kostyl">
                 <div class="nav__logo">
                     cafel.kz
@@ -24,7 +26,7 @@
                     <a href="#testimonials">Отзыв</a>
                     <a href="#contact">Напишите нам</a>
                 </div>
-                <i class="fas fa-bars" id="menu-bars"></i>
+                <i class="fas fa-bars" id="menu-bars" style="z-index: 20"></i>
             </div>
         </nav>
     <div class="wrapper">
@@ -152,42 +154,70 @@
             <div class="item__img"><i class="fas fa-box-open"></i></div>
             <div class="text__title">Продукция</div>
             <div class="text__description">
-                изготовлена на современном итальянском оборудовании с использованием экологически чистого сырья.
+                изготовлена на современном итальянском оборудовании.
             </div>
         </div>
         <div class="item">
             <div class="item__img"><i class="fas fa-industry"></i></div>
             <div class="text__title">Производители</div>
             <div class="text__description">
-                придерживаются высоких стандартов качества и поставляют сертифицированную продукцию.
+                придерживаются высоких стандартов качества.
             </div>
         </div>
         <div class="item">
             <div class="item__img"><i class="fas fa-fist-raised"></i></div>
-            <div class="text__title">В зависимости</div>
+            <div class="text__title">гарантия</div>
             <div class="text__description">
-                от завода предоставляется гарантия на продукцию длительностью 10-20 лет.
+                 на продукцию длительностью 10-20 лет.
             </div>
         </div>
         <div class="item">
             <div class="item__img"><i class="fas fa-stream"></i></div>
             <div class="text__title">В нашем</div>
             <div class="text__description">
-                магазине представлен большой выбор изделий, ассортимент регулярно пополняется новинками и популярными позициями.
+                магазине представлен большой выбор изделий.
             </div>
         </div>
     </div>
 </div>
 
-<div class="testimonials" id="testimonials">
-    <div class="wrapper">
-        <div class="text__title">
-            “Делал заказ керамогранита, отправили в тот же день . Всё быстро, максимально доступно, буду ещё делать заказ. Плитка доехала вся целая..”
+<div class="testimonials swiper mySwiper" id="testimonials">
+    <div class="swiper-wrapper">
+        <div class="swiper-slide">
+            <div class="text__description">
+                Abubakir Zharylgapov
+            </div>
+            <div class="text__title">
+                “Делал заказ керамогранита, отправили в тот же день . Всё быстро, максимально доступно, буду ещё делать заказ. Плитка доехала вся целая..”
+            </div>
+
         </div>
-        <div class="text__description">
-            Александр
+        <div class="swiper-slide">
+            <div class="text__description">
+                Almaz Nurgaliyev
+            </div>
+            <div class="text__title">
+                “Удобный сайт, заказываем не первый год, привозят быстро. Все отлично.”
+            </div>
+        </div>
+        <div class="swiper-slide">
+            <div class="text__description">
+                Shadiyar Turk
+            </div>
+            <div class="text__title">
+                “Самые низкие цены, отличное качество, всегда берем у них”
+            </div>
+        </div>
+        <div class="swiper-slide">
+            <div class="text__description">
+                Valeriya Butalova
+            </div>
+            <div class="text__title">
+                “Обслуживание было быстрым, профессиональным, качественным. Очень довольна как качеством товара, так и обслуживанием.”
+            </div>
         </div>
     </div>
+    <div class="swiper-pagination"></div>
 </div>
 
 <div class="clients">
@@ -258,15 +288,15 @@
                 <p class="text__description">Legals</p>
             </div>
             <div class="footer__links__col">
-                <p class="text__description">Facebook</p>
-                <p class="text__description">Twitter</p>
-                <p class="text__description">Instagram</p>
-                <p class="text__description">Dribble</p>
+                <p class="text__description"><i class="fab fa-facebook-square"></i> Facebook</p>
+                <p class="text__description"><i class="fab fa-twitter-square"></i> Twitter</p>
+                <p class="text__description"><i class="fab fa-instagram-square"></i> Instagram</p>
+                <p class="text__description"><i class="fab fa-youtube-square"></i> Youtube</p>
             </div>
         </div>
     </div>
 </footer>
-
+<script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
 <script src="js/main.js"></script>
 <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBq2hP7Uwqcb-5ak1Mtckhdq0CAUuh0jIM&callback=goMap"></script>
 </body>

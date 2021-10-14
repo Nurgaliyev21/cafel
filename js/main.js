@@ -1,4 +1,11 @@
 'use strict'
+var swiper = new Swiper(".mySwiper", {
+    pagination: {
+        el: ".swiper-pagination",
+        clickable: true
+    },
+});
+
 function goMap() {
     let mapPosition = {lat: 43.24198572367169,  lng: 76.91007353001741},  // Центр карты но не цель
         opt = {
@@ -25,8 +32,37 @@ function goMap() {
     })
 }
 
+let menu = document.getElementById('menu')
 
-let mediaMaxWidth450 = window.matchMedia('(max-width: 430px)');
+window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+    if (document.body.scrollTop > 80 || document.documentElement.scrollTop > 80) {
+        menu.style.height = '70px'
+        menu.style.background = "rgba(0,0,0,0.75)"
+        menu.classList.remove('navMobile')
+        menuLinks.classList.remove("mobMenu");
+    } else {
+        menu.style.height = '100px'
+        menu.style.background = "rgba(0,0,0,0.5)"
+    }
+}
+
+let menuBtn = document.getElementById("menu-bars"),
+    menuLinks = document.getElementById('menu-links')
+menuBtn.addEventListener('click', ()=> {
+    if (!menu.classList.contains('navMobile')) {
+        menu.classList.add('navMobile')
+        menuLinks.classList.add("mobMenu");
+    } else {
+        menu.classList.remove('navMobile')
+        menuLinks.classList.remove("mobMenu");
+    }
+})
+
+
+let mediaMaxWidth450 = window.matchMedia('(max-width: 430px)'),
+    mediaMaxWidth920 = window.matchMedia('(max-width: 920px)');
 let worksItems = document.getElementById('cell').getElementsByClassName("item");
 function mediaResponse(e) {
     if (e.matches) {
@@ -37,9 +73,20 @@ function mediaResponse(e) {
         for (let i = 0; i < 5; i++) {
             worksItems[i].style.display = 'flex';
         }
+        menu.classList.remove('navMobile')
+        menuLinks.classList.remove("mobMenu");
+    }
+}
+function menuResponse(e) {
+    if (e.matches) {
+
+    } else {
+        menu.classList.remove('navMobile')
+        menuLinks.classList.remove("mobMenu");
     }
 }
 mediaMaxWidth450.addListener(mediaResponse)
+mediaMaxWidth920.addListener(menuResponse)
 
 
 if (window.matchMedia("(max-width: 430px)").matches) {
@@ -51,3 +98,4 @@ if (window.matchMedia("(max-width: 430px)").matches) {
         worksItems[i].style.display = 'flex';
     }
 }
+

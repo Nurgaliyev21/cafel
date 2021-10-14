@@ -40,12 +40,21 @@ img { max-width: 100%; max-height: 100%; }
     display: none;
     cursor: pointer;
 }
-progress {
-    width: 100%;
-    height: 8px;
+.navMobile {
+    height: 150px!important;
+    justify-content: space-between;
 }
-.sideMenu {
+.navMobile .wrapper{
+}
+.navMobile .wrapper .nav__logo{
     display: none;
+}
+.mobMenu {
+    width: 100%;
+    height: 100px!important;
+    display: flex!important;
+    justify-content: flex-start!important;
+    flex-wrap: wrap;
 }
 
 /* 1 block */
@@ -59,12 +68,15 @@ progress {
     background-repeat: no-repeat;
 }
 nav {
+    position: fixed;
+    z-index: 10;
     width: 100%;
     height: 100px;
     display: flex;
     align-items: center;
     background: rgba(0,0,0,0.5);
     color: white;
+    transition: 0.45s;
 }
 .main_block nav .wrapper {
     flex-direction: row;
@@ -78,14 +90,14 @@ nav {
     align-items: center;
 }
 .nav__links a {
-    margin-left: 10px;
+    margin-left: 25px;
 }
 .main_block .wrapper {
     justify-content: flex-start;
     align-items: center;
 }
 .container_row {
-    margin-top: 130px;
+    margin-top: 251px;
     width: 90%;
     display: flex;
     justify-content: center;
@@ -229,22 +241,27 @@ nav {
 .services {
     background: #F5F5F5;
     height: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 .services .cells {
     display: flex;
     justify-content: center;
     align-items: center;
+    width: 100%;
+    height: 100%;
 }
 .services .cells .item {
-    height: 150px;
+    height: 160px;
     flex-direction: column;
-    justify-content: space-evenly;
+    justify-content: space-between;
 }
 .services .cells .item .text__title {
     font-size: 16px;
 }
 .services .cells .item .text__description {
-    width: 90%;
+    width: 80%;
     text-align: center;
 }
 
@@ -258,22 +275,32 @@ nav {
     display: flex;
     align-items: center;
 }
-.testimonials .wrapper {
-    width: 90%;
+
+.swiper-slide {
+    width: 70%;
     height: 60%;
+    display: flex;
     flex-direction: column;
-    justify-content: space-evenly;
+    justify-content: center;
     align-items: center;
     text-align: center;
 
+}
+
+.swiper-pagination-bullet {
+    width: 35px!important;
+    border-radius: 0!important;
+}
+.swiper-pagination-bullet-active {
+    background: white!important;
 }
 .testimonials .text__title {
     width: 70%;
     font-size: 24px;
 }
-.testimonials .text__description {
-    font-size: 16px;
-    color: black;
+.swiper-slide .text__description {
+    font-size: 22px;
+    margin-bottom: 30px;
 }
 .testimonials__controller {
     width: 70%;
@@ -283,34 +310,15 @@ nav {
     align-items: center;
     justify-self: flex-end;
 }
-.cl-prev-next {
-    width: 10px;
-    height: 10px;
-    background: #B0E8E6;
-    border-radius: 120px;
-    transition: ease-in-out 0.5s;
-    cursor: pointer;
-}
-.cl-active {
-    width: 16px;
-    height: 16px;
-    background: white;
-    border-radius: 120px;
-    transition: ease-in-out 0.5s;
-    cursor: pointer;
-}
-.cl-prev-next:hover {
-    background: #6a61e6;
-}
 
 /* 8 block */
 
 .clients {
-    width: 100%;
+    width: 80%;
     height: 200px;
     display: flex;
     flex-direction: row;
-
+    margin: 0 auto;
 }
 
 /* 9 block */
@@ -470,7 +478,9 @@ footer .wrapper {
     .works .cells .item img {
         width: 80%;
     }
-
+    .clients {
+        width: 100%;
+    }
 }
 @media screen and (max-width: 690px) {
 
@@ -496,11 +506,12 @@ footer .wrapper {
         height: 50% !important;
     }
     .services {
-        height: 800px;
+        height: 600px;
     }
     .services .cells .item, .numbers .item {
         width: 40%;
         height: 245px;
+        justify-content: space-evenly;
     }
     .numbers .item {
         justify-content: flex-start;
@@ -586,7 +597,35 @@ footer .wrapper {
         width: 100%;
     }
     .contact-form {
-        height: 500px;
+        height: 580px;
+    }
+    .contact-form .wrapper {
+        height: 100%;
+        justify-content: flex-start;
+    }
+    .text__title {
+        text-align: center;
+    }
+    .about_us {
+        height: 350px;
+    }
+    .numbers .item .text__title{
+        text-align: left;
+    }
+    .footer__links__col .text__description i, .footer__contacts .text__description i {
+        display: inline-block;
+        margin-right: 5px;
+    }
+    .works {
+        display: flex;
+        justify-content: flex-end;
+    }
+    .works .cells {
+        height: 100%;
+        justify-content: space-around;
+    }
+    .work_process .wrapper {
+        margin-top: 0;
     }
 }
 
