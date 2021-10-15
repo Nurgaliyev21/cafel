@@ -627,26 +627,7 @@ footer .wrapper {
     .work_process .wrapper {
         margin-top: 0;
     }
-}
-
-/* end */
-.alert {
-    bottom: 0;
-    right: 0;
-    position: fixed;
-    z-index: 5;
-    background: white;
-}
-.mobile_menu {
-    height: 100vh;
-    width: 200px;
-    position: fixed;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-    flex-direction: column;
-    top: 0;
-    right: 0;
-    background: white;
+    nav {
+        height: 75px!important;
+    }
 }
